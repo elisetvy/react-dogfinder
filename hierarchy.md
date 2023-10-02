@@ -1,7 +1,7 @@
 App
 
 DogFinderApp
-- <NAV />
+- Nav
 - Routes
 State:
 - Doglist (fetched via API)

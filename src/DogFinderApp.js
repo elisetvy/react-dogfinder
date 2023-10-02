@@ -22,10 +22,10 @@ function DogFinderApp() {
   return (
     <>
     <BrowserRouter>
-      <Navbar />
+      <Navbar dogList={dogList} />
       <Routes>
       <Route element= { <DogList dogList={dogList} />} path="/" />
-      <Route element= { <DogDetails />} path="/dogs/:name" />
+      <Route element= { <DogDetails dogList={dogList} />} path="/dogs/:name" />
       </Routes>
     </BrowserRouter>
     </>
