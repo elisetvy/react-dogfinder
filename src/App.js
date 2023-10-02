@@ -1,9 +1,10 @@
 import './App.css';
+import DogFinderApp from './DogFinderApp';
 
 function App() {
   return (
     <div className="App">
-      <h1>Good luck!</h1>
+      <DogFinderApp />
     </div>
   );
 }
