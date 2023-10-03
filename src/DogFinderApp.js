@@ -12,11 +12,11 @@ function DogFinderApp() {
     const resp = await fetch('http://localhost:5001/dogs');
     const data = await resp.json()
     setDogList(data);
+    setCallGetDogs(false);
   }
 
   if (callGetDogs === true) {
     getDogs();
-    setCallGetDogs(false);
   }
 
   return (
@@ -25,7 +25,7 @@ function DogFinderApp() {
       <Navbar dogList={dogList} />
       <Routes>
       <Route element= { <DogList dogList={dogList} />} path="/" />
-      <Route element= { <DogDetails dogList={dogList} />} path="/dogs/:name" />
+      <Route element= { <DogDetails dogList={dogList} getDogs={getDogs} callGetDogs={callGetDogs} />} path="/dogs/:name" />
       </Routes>
     </BrowserRouter>
     </>
