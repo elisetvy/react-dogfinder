@@ -1,7 +1,9 @@
 import { NavLink } from "react-router-dom";
 
 function Navbar({ dogList }) {
-  console.log("doglist in NavBar:", dogList);
+  let activeStyle = {
+    fontSize: "50px"
+  };
 
   return (
     <>
@@ -9,7 +11,9 @@ function Navbar({ dogList }) {
         <nav>
 
           {dogList.map(d =>
-            <NavLink key={d.name} to={`/dogs/${d.name}`}>{d.name}</NavLink>
+            <NavLink key={d.name} to={`/dogs/${d.name}`} style={({ isActive }) =>
+              isActive ? activeStyle : undefined
+            }>{d.name}</NavLink>
           )}
 
         </nav>
